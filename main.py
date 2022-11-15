@@ -156,21 +156,20 @@ def _run_pipeline(
         pred_data = feature_obj.make_features(sub_data, train=False)
         y_pred = 0
         q = 0
-        b = 10
-        y_pred += models[0].predict(pred_data[models[0].feature_names_]) * np.exp((10 - 3.547)*b)
-        q += np.exp((10 - 3.547)*b)
-        y_pred += models[1].predict(pred_data[models[1].feature_names_]) * np.exp((10 - 2.779)*b)
-        q += np.exp((10 - 2.779)*b)
-        y_pred += models[2].predict(pred_data[models[2].feature_names_]) * np.exp((10 - 2.107)*b)
-        q += np.exp((10 - 2.107)*b)
-        y_pred += models[3].predict(pred_data[models[3].feature_names_]) * np.exp((10 - 3.217)*b)
-        q += np.exp((10 - 3.217)*b)
-        y_pred += models[4].predict(pred_data[models[4].feature_names_]) * np.exp((10 - 8.543)*b)
-        q += np.exp((10 - 8.543)*b)
-        y_pred += models[5].predict(pred_data[models[5].feature_names_]) * np.exp((10 - 8.498)*b)
-        q += np.exp((10 - 8.498)*b)
-        y_pred += models[6].predict(pred_data[models[6].feature_names_]) * np.exp((10 - 4.606)*b)
-        q += np.exp((10 - 4.606)*b)
+        y_pred += models[0].predict(pred_data[models[0].feature_names_]) * np.exp(10 - 3.565)
+        q += np.exp(10 - 3.565)
+        y_pred += models[1].predict(pred_data[models[1].feature_names_]) * np.exp(10 - 2.804)
+        q += np.exp(10 - 2.804)
+        y_pred += models[2].predict(pred_data[models[2].feature_names_]) * np.exp(10 - 2.065)
+        q += np.exp(10 - 2.065)
+        y_pred += models[3].predict(pred_data[models[3].feature_names_]) * np.exp(10 - 3.183)
+        q += np.exp(10 - 3.183)
+        y_pred += models[4].predict(pred_data[models[4].feature_names_]) * np.exp(10 - 8.389)
+        q += np.exp(10 - 8.389)
+        y_pred += models[5].predict(pred_data[models[5].feature_names_]) * np.exp(10 - 8.663)
+        q += np.exp(10 - 8.663)
+        y_pred += models[6].predict(pred_data[models[6].feature_names_]) * np.exp(10 - 4.621)
+        q += np.exp(10 - 4.621)
 
         y_pred /= q
         pred_data['ton'] = y_pred
